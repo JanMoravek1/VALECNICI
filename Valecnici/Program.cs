@@ -8,6 +8,17 @@ namespace Battle
     {
         static void Main(string[] args)
         {
+
+
+            Hra BlackJack = new Hra ();
+
+            BlackJack.Hrej();
+            
+
+
+
+
+
             Bojovnik b = new Bojovnik("Hektor", 2);
             Kouzelnik k = new Kouzelnik("Merlin", 6);
             Lucisnik l = new Lucisnik("Legolas", 4);
@@ -29,7 +40,7 @@ namespace Battle
             do
 
             {
-                Console.WriteLine("Zadej číslo druhého bojovníka bojovník(0), kouzelník(1), lučišník(2)");
+                Console.WriteLine("Zadej číslo prvniho bojovníka bojovník(0), kouzelník(1), lučišník(2)");
                 cislo1 = int.Parse(Console.ReadLine());
 
                 if (cislo1 > postavy.Count - 1)

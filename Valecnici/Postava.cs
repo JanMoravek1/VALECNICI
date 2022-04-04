@@ -11,6 +11,7 @@ namespace Valecnici
         public string Jmeno { get; set; }
         public int PocetZivotu { get; set; }
         public int SilaUtoku { get; set; }
+      
 
         virtual public void ZautocNaVsechny(Postava druhaPostava, Postava tretiPostava)
         {
