@@ -13,8 +13,8 @@ namespace Valecnici
         Hrac hracH = new Hrac("Hrac", 0);
 
         public void Hrej()
-
         {
+            /*
 
             do
 
@@ -33,12 +33,27 @@ namespace Valecnici
                                 Console.WriteLine("Vyhral: " + bankerB.Jmeno);
 
             else Console.WriteLine("Vyhral: " + hracH.Jmeno);
+            */
+            Balicek balicek = new Balicek();
+            balicek.naplnBalicek();
+            Karta karta = balicek.vytahniKaru();
+            Console.WriteLine(karta);
+            karta = balicek.vytahniKaru();
+            Console.WriteLine(karta);
+            if (balicek.zbyvajiciPocetKaret() == 0)
+            {
+                Console.WriteLine("dosli karty, micham");
+                balicek.naplnBalicek();
+            }
+            karta = balicek.vytahniKaru();
+            Console.WriteLine(karta);
+
 
 
         }
 
 
-
-        
     }
+
+
 }

@@ -9,7 +9,7 @@ namespace Battle
         static void Main(string[] args)
         {
 
-
+            // commit od Petra
             Hra BlackJack = new Hra ();
 
             BlackJack.Hrej();
