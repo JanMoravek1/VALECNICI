@@ -20,21 +20,21 @@ namespace Valecnici
             int[] hodnoty = new int[] { 10, 2, };
 
 
-            //List<Karta> pomocneKarty = new List<Karta>();
+           List<Karta> pomocneKarty = new List<Karta>();
 
             foreach (string barva in barvy)
             {
                 for (int i = 0; i < druhy.Length; i++)
                 {
                     Karta karta = new Karta(druhy[i], barva, hodnoty[i]);
-                    //pomocneKarty.Add(karta);
-                    karty.Add(karta);
+                    pomocneKarty.Add(karta);
+                    //karty.Add(karta);
                 }
             }
 
-            //Random rnd = new Random();
+            Random rnd = new Random();
 
-            //karty = pomocneKarty.OrderBy(item => rnd.Next());
+            karty = pomocneKarty.OrderBy(item => rnd.Next()).ToList();
         }
 
         public Karta vytahniKaru()
