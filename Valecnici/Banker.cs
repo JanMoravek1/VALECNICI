@@ -23,7 +23,7 @@ namespace Valecnici
             PocetBodu = PocetBodu + cislo;
         }
 
-       // koment
+
 
 
         public Banker (string jmeno, int pocetBodu)
