@@ -46,7 +46,49 @@ namespace Valecnici
 
             Console.WriteLine(" Nejdrive hraje Hrac, pro další kartu zmačkněte D, pokud se dostanete přes 21 bodů prohráváte");
 
-            string klavesa; 
+            string klavesa;
+
+            while (true)
+
+            {
+
+                if (balicek.zbyvajiciPocetKaret() == 0)
+                {
+                    Console.WriteLine("dosli karty, micham");
+                    balicek.naplnBalicek();
+                }
+
+                Karta karta = balicek.vytahniKaru();
+
+
+                hracH.PocetBodu = hracH.PocetBodu + karta.hodnota;
+                if (hracH.PocetBodu > 21)
+                {
+                    Console.WriteLine("Hrac prohral");
+                    Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
+                    return;
+                }
+
+                Console.WriteLine(" Váš prozatímní počet bodů: " + hracH.PocetBodu);
+                Console.WriteLine(" Chcete táhnout dále? D pro další tah, N přenechat Bankéři");
+
+                klavesa = Console.ReadLine();
+
+                if (klavesa == "n")
+                {
+                    break;
+                }
+
+            }
+
+            /*
+            if (hracH.PocetBodu > 21)
+            {
+                Console.WriteLine("Hrac prohral");
+                Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
+            }
+            */
+
 
             do
 
@@ -59,69 +101,34 @@ namespace Valecnici
                 }
 
                 Karta karta = balicek.vytahniKaru();
-            
-                
-                hracH.PocetBodu = hracH.PocetBodu + karta.hodnota;
-                Console.WriteLine(" Váš prozatímní počet bodů: " + hracH.PocetBodu);
-                Console.WriteLine(" Chcete táhnout dále? D pro další tah, N přenechat Bankéři");
-                klavesa = Console.ReadLine ();
 
-            } while (hracH.PocetBodu < 22 && klavesa != "n");
+                Console.WriteLine(" Banker vytahl kartu: " + karta);
+                bankerB.PocetBodu = bankerB.PocetBodu + karta.hodnota;
+                Console.WriteLine(" Bankéře prozatímní počet bodů: " + bankerB.PocetBodu);
 
-            if (hracH.PocetBodu > 21)
-            {
-                Console.WriteLine("Hrac prohral");
-                Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
-            }
 
-            else
+            } while (bankerB.PocetBodu <= hracH.PocetBodu);
 
-            {
-
-                do
-
-                {
-
-                    if (balicek.zbyvajiciPocetKaret() == 0)
-                    {
-                        Console.WriteLine("dosli karty, micham");
-                        balicek.naplnBalicek();
-                    }
-
-                    Karta karta = balicek.vytahniKaru();
-
-                    Console.WriteLine(" Banker vytahl kartu: " + karta);
-                    bankerB.PocetBodu = bankerB.PocetBodu + karta.hodnota;
-                    Console.WriteLine(" Bankéře prozatímní počet bodů: " + bankerB.PocetBodu);
-               
-
-                } while (bankerB.PocetBodu <= hracH.PocetBodu);
-
-            }
 
 
             if (bankerB.PocetBodu > 21)
-                {
-                    Console.WriteLine("Hrac vyhral");
-                    Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
+            {
+                Console.WriteLine("Hrac vyhral");
+                Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
                 Console.WriteLine("Banker prohral");
                 Console.WriteLine(" S dosaženým počtem bodů: " + bankerB.PocetBodu);
+                return;
 
             }
 
 
-            else
+            Console.WriteLine("Hrac prohral");
+            Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
+            Console.WriteLine("Banker vyhral");
+            Console.WriteLine(" S dosaženým počtem bodů: " + bankerB.PocetBodu);
 
-            {
-                Console.WriteLine("Hrac prohral");
-                Console.WriteLine(" S dosaženým počtem bodů: " + hracH.PocetBodu);
-                Console.WriteLine("Banker vyhral");
-                Console.WriteLine(" S dosaženým počtem bodů: " + bankerB.PocetBodu);
-
-            }
 
         }
-
 
     }
 
