@@ -25,6 +25,7 @@ namespace Valecnici
 
 
 
+
         public Banker (string jmeno, int pocetBodu)
         {
             this.Jmeno = jmeno;

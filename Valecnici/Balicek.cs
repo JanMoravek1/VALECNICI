@@ -11,22 +11,19 @@ namespace Valecnici
 
         public void naplnBalicek()
         {
-            //string[] barvy = new string[] { "Srdce", "Piky", "Kary", "Kule" };
-            //string[] druhy = new string[] { "desidka", "kluk", "dama", "kral", "eso" };
-            //int[] hodnoty = new int[] { 10, 2, 2, 2, 11 };
 
-            string[] barvy = new string[] { "Srdce" };
-            string[] druhy = new string[] { "desidka", "kluk" };
-            int[] hodnoty = new int[] { 10, 2, };
+            string[] barvy = new string[] { "Srdce", "Piky", "Kary", "Kule" };
+            string[] druhy = new string[] { "sedm", "osm", "devet", "deset", "spodek", "svršek", "kral", "eso" };
+            int[] hodnoty = new int[] { 7, 8, 9, 10, 1, 1, 2, 11 };
 
-
-           List<Karta> pomocneKarty = new List<Karta>();
+            List<Karta> pomocneKarty = new List<Karta>();
 
             foreach (string barva in barvy)
             {
                 for (int i = 0; i < druhy.Length; i++)
                 {
                     Karta karta = new Karta(druhy[i], barva, hodnoty[i]);
+
                     pomocneKarty.Add(karta);
                     //karty.Add(karta);
                 }
@@ -35,6 +32,7 @@ namespace Valecnici
             Random rnd = new Random();
 
             karty = pomocneKarty.OrderBy(item => rnd.Next()).ToList();
+
         }
 
         public Karta vytahniKaru()
@@ -47,6 +45,18 @@ namespace Valecnici
         public int zbyvajiciPocetKaret()
         {
             return karty.Count;
+        }
+
+
+
+        public void vypisBalicku ()
+
+        {
+            for (int i = 0; i < karty.Count; i++)
+            {
+                
+                Console.WriteLine(karty[i].druh + karty[i].barva + karty[i].hodnota);
+            }
         }
 
     }

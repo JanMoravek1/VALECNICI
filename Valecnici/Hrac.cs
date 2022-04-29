@@ -16,7 +16,7 @@ namespace Valecnici
         {
 
             Random nh = new Random();
-            int cislo = nh.Next(0, 12);
+            int cislo = nh.Next(2, 12);
 
             Console.WriteLine(Jmeno + " vrha kostkou a hodil" + cislo);
 
