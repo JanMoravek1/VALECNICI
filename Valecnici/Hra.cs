@@ -52,6 +52,7 @@ namespace Valecnici
 
             {
 
+
                 if (balicek.zbyvajiciPocetKaret() == 0)
                 {
                     Console.WriteLine("dosli karty, micham");
@@ -76,6 +77,7 @@ namespace Valecnici
 
             else
 
+
             {
 
                 do
@@ -90,12 +92,15 @@ namespace Valecnici
 
                     Karta karta = balicek.vytahniKaru();
 
+
                     Console.WriteLine(" Banker vytahl kartu: " + karta);
                     bankerB.PocetBodu = bankerB.PocetBodu + karta.hodnota;
                     Console.WriteLine(" Bankéře prozatímní počet bodů: " + bankerB.PocetBodu);
                
 
+
                 } while (bankerB.PocetBodu <= hracH.PocetBodu);
+
 
             }
 
@@ -110,7 +115,10 @@ namespace Valecnici
             }
 
 
+        }
+
             else
+
 
             {
                 Console.WriteLine("Hrac prohral");
@@ -127,3 +135,4 @@ namespace Valecnici
 
 
 }
+
