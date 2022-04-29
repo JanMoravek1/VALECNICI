@@ -11,25 +11,28 @@ namespace Valecnici
 
         public void naplnBalicek()
         {
+
             string[] barvy = new string[] { "Srdce", "Piky", "Kary", "Kule" };
             string[] druhy = new string[] { "sedm", "osm", "devet", "deset", "spodek", "svršek", "kral", "eso" };
             int[] hodnoty = new int[] { 7, 8, 9, 10, 1, 1, 2, 11 };
 
-            //List<Karta> pomocneKarty = new List<Karta>();
+            List<Karta> pomocneKarty = new List<Karta>();
 
             foreach (string barva in barvy)
             {
                 for (int i = 0; i < druhy.Length; i++)
                 {
                     Karta karta = new Karta(druhy[i], barva, hodnoty[i]);
-                    //pomocneKarty.Add(karta);
-                    karty.Add(karta);
+
+                    pomocneKarty.Add(karta);
+                    //karty.Add(karta);
                 }
             }
 
-            //Random rnd = new Random();
+            Random rnd = new Random();
 
-            //karty = pomocneKarty.OrderBy(item => rnd.Next());
+            karty = pomocneKarty.OrderBy(item => rnd.Next()).ToList();
+
         }
 
         public Karta vytahniKaru()
@@ -45,6 +48,7 @@ namespace Valecnici
         }
 
 
+
         public void vypisBalicku ()
 
         {
@@ -54,5 +58,6 @@ namespace Valecnici
                 Console.WriteLine(karty[i].druh + karty[i].barva + karty[i].hodnota);
             }
         }
+
     }
 }
