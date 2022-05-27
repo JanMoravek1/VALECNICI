@@ -55,7 +55,7 @@ namespace Valecnici
             for (int i = 0; i < karty.Count; i++)
             {
                 
-                Console.WriteLine(karty[i].druh + karty[i].barva + karty[i].hodnota);
+                Console.WriteLine(karty.ElementAt(i).druh + karty[i].barva + karty[i].hodnota);
             }
         }
 
