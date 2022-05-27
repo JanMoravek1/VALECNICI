@@ -9,6 +9,13 @@ namespace Battle
         static void Main(string[] args)
         {
 
+
+
+            RezervacniSystem R = new RezervacniSystem();
+            R.VytvorRezervaci("Honza", "prvniho", "patyho");
+            R.VypisRezervace();
+
+
             // commit od Petra
             Hra BlackJack = new Hra ();
 
