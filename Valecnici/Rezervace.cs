@@ -8,14 +8,17 @@ namespace Valecnici
     {
 
         public string Jmeno { get; set; }
-        public string Start { get; set; }
-        public string End { get; set; }
+        public int Zacatek { get; set; }
+        public int Konec { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
+       // public Room pridelenyPokoj { get; set; } - je to nutné?
 
-        public Rezervace(string Jmeno, string Start, string End)
+        public Rezervace(string Jmeno, int Zacatek, int Konec)
         {
             this.Jmeno = Jmeno;
-            this.Start = Start;
-            this.End = End;
+            this.Zacatek = Zacatek;
+            this.Konec = Konec;
 
         }
     }
