@@ -17,13 +17,13 @@ namespace Battle
         h.vypisHotelu();
 
         Objednavka o = new Objednavka();
-        h.vytvorRezervaci(o);
+        h.vytvorRezervaci2(o);
 
         Objednavka ob = new Objednavka();
-        h.vytvorRezervaci(ob);
+        h.vytvorRezervaci2(ob);
 
          Objednavka obj = new Objednavka();
-         h.vytvorRezervaci(obj);
+         h.vytvorRezervaci2(obj);
 
 
 
